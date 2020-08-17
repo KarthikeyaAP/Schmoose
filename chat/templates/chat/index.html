@@ -1,0 +1,35 @@
+{% load static %}
+
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Schmoose</title>
+        <link rel="stylesheet" href="{% static 'chat/styles.css' %}" type="text/css">
+    </head>
+    <body>
+        <header>
+            <center>
+                <h1>Let's Do it</h1>
+                <h4>Find the answers for your queries</h4>
+            </center>
+        </header>
+
+        {% if user.is_authenticated %}
+        <div class="signin">
+            <div>Signed in as <strong>{{user.username}}</strong></div>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        <div class="tabs">
+            <div  id="general"><a href="{% url 'general' %}">#General</a></div>
+            <div id="books"><a href="{% url 'books'%}">#Books</a></div>
+            <div  id="courses"><a href="{% url 'courses' %}">#Courses</a></div>
+        </div>
+        {% else %}
+        <div class="tabs">
+            <div id="login"><a href="{% url 'login' %}">Login</a></div>
+            <div id="register"><a href="{% url 'register' %}">Register</a></div>
+        </div>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,68 @@
+{% load static%}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Schmoose</title>
+        <link rel="stylesheet" href="{% static 'chat/styles.css' %}" type="text/css">
+        <script src="http://cdn.date-fns.org/v1.0.0/date_fns.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <center>
+               <h1>
+                    {% block heading %}
+                    {% endblock %}
+                </h1>
+                <h4>Find the answers for your queries</h4>
+            </center>
+        </header>
+        <div class="signin">
+            <div>Signed in as <strong>{{user.username}}</strong></div>
+            <a href="{% url 'logout' %}">Logout</a>
+        </div>
+        <div class="tabs">
+            <div  id="general"><a href="{% url 'general' %}">#General</a></div>
+            <div id="books"><a href="{% url 'books'%}">#Books</a></div>
+            <div  id="courses"><a href="{% url 'courses' %}">#Courses</a></div>
+        </div>
+        <ul>
+           
+        </ul>
+        <form>
+            <input type="text" id="message" placeholder="Enter text" name="message" autocomplete="off">
+            <div>
+                <label for="anom">Do you want to post it anonymously</label>
+                <input type="checkbox" id="anom">
+            </div>
+            <input type="hidden" value="{{user.username}}" id="user">
+            <input type="submit" id="submit" value="Send">
+        </form>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBh7r0hhTJxxL62LN_b2Nz401rJa8QQ4Hs",
+    authDomain: "schmoose-c85c4.firebaseapp.com",
+    databaseURL: "https://schmoose-c85c4.firebaseio.com",
+    projectId: "schmoose-c85c4",
+    storageBucket: "schmoose-c85c4.appspot.com",
+    messagingSenderId: "557341300323",
+    appId: "1:557341300323:web:ae12e1e258c1d05d160a56",
+    measurementId: "G-D4GJPBRTZF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const db=firebase.firestore();
+</script>
+{% block content%}
+{% endblock %}
+</html>

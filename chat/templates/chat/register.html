@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type='text'],input[type='password'],input[type='email']{
+            width: 100%;
+            border-radius: 22px;
+            box-shadow: 0px 1px 6px 0 rgba(32,33,36,0.28);
+            height: 44px;
+            font-size: 16px;
+            border: none;
+            margin-bottom: 20px;
+            cursor: text;
+            text-indent: 40px;
+        }
+        input[type='submit']{
+            width: 50%;
+            border-radius: 22px;
+            box-shadow: 0px 1px 6px 0 rgba(32,33,36,0.28);
+            height: 44px;
+            font-size: 16px;
+            border: none;
+            margin-bottom: 20px
+        }
+        input[type='submit']:hover{
+            box-shadow: none;
+        }
+        h2{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center>
+           <h1> Register</h1>
+        </center>
+    </header>
+   <form method="POST">
+       {% csrf_token %}
+       <input type="text" placeholder="Username" name="username"required autocomplete="off">
+       <input type="email" placeholder="email adrress" name="email" required autocomplete="off">
+       <input type="password" placeholder="Password" name="password" required autocomplete="off">
+       <input type="password" placeholder="confirm your password" name="confirmation" autocomplete="off">
+       <input type="submit" value="register">
+   </form> 
+   <h2>{{message}}</h2>
+</body>
+</html>

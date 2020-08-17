@@ -1,0 +1,75 @@
+html,body{
+    margin: 0;
+}
+header{
+    background-color: lightyellow;
+    margin: 0 5%;
+    border-radius: 22px;
+    /* border: black solid 1px; */
+}
+.tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#general,#books,#courses,#login,#register{
+    margin:0 2%;
+    background-color: lightcyan;
+    padding: 1%;
+    color: coral !important;
+}
+#general:hover,#books:hover,#courses:hover,#login:hover,#register:hover{
+    background-color:wheat ;
+    color: black;
+    transition: 2s;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0;
+}
+#message{
+    width: 50%;
+    border-radius: 22px;
+    box-shadow: 0px 1px 6px 0 rgba(32,33,36,0.28);
+    height: 44px;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 20px;
+    cursor: text;
+    text-indent: 40px;
+    
+}
+#message,#submit{
+    margin: 1%;
+}
+#message:focus{
+    outline-width: 0;
+}
+.signin{
+    display: flex;
+    flex-flow: row-reverse;
+    
+}
+a{
+    color: coral;
+    text-decoration: none;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+li{
+    background-color: lightblue;
+    border-radius: 22px;
+    list-style-type: none;
+    padding: 2%;
+}
+.time{
+    font-size: 12px;
+    opacity: 40%;
+}
