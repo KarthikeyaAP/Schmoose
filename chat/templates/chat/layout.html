@@ -5,6 +5,7 @@
         <title>Schmoose</title>
         <link rel="stylesheet" href="{% static 'chat/styles.css' %}" type="text/css">
         <script src="http://cdn.date-fns.org/v1.0.0/date_fns.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header>
@@ -22,7 +23,7 @@
         </div>
         <div class="tabs">
             <div  id="general"><a href="{% url 'general' %}">#General</a></div>
-            <div id="books"><a href="{% url 'books'%}">#Books</a></div>
+            <div id="books"><a href="{% url 'books'%}" >#Books</a></div>
             <div  id="courses"><a href="{% url 'courses' %}">#Courses</a></div>
         </div>
         <ul>
@@ -63,6 +64,8 @@
   firebase.analytics();
   const db=firebase.firestore();
 </script>
+<script src="{% static 'chat/all.js'%}"></script>
+
 {% block content%}
 {% endblock %}
 </html>
